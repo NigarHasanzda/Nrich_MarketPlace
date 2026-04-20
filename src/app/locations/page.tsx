@@ -1,8 +1,11 @@
 import React from 'react'
+import FacilityPage from './Location'
 
 const page = () => {
   return (
-    <div>page</div>
+   <>
+   <FacilityPage/>
+   </>
   )
 }
 
