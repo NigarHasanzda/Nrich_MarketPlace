@@ -8,7 +8,7 @@ const Header = () => {
         
         {/* Logo Bölməsi */}
         <div className="flex items-center">
-          <h1 className="text-[#001B71] text-3xl font-black tracking-tighter">
+          <h1  className="text-[#001B71] text-3xl font-black tracking-tighter">
             N'RICH
           </h1>
         </div>
