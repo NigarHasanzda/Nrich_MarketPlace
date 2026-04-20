@@ -1,3 +1,4 @@
+"use client"
 import { Quicksand } from 'next/font/google';
 import FeaturedCard from "../Cards/FeaturedCard";
 const quicksand = Quicksand({

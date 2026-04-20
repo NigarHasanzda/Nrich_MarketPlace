@@ -1,3 +1,4 @@
+"use client"
 import BenefitCard from "../Cards/BenefitCard";
 
 

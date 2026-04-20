@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import { Quicksand } from 'next/font/google';
 import { Zap, MapPin, ChevronRight, Phone, Mail, Globe, MessageSquare } from 'lucide-react';
@@ -8,12 +9,11 @@ const quicksand = Quicksand({ subsets: ['latin'], weight: ['400', '600', '700'] 
 
 const ProgramsListSection = () => {
   return (
-    <section className={`${quicksand.className} bg-gray-50 py-12 px-6`}>
+    <section className={`${quicksand.className} bg-gray-50 py-22 px-6`}>
       <div className="max-w-[1550px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
         
         <div className="lg:col-span-8 space-y-6">
-          
-          {/* Filter Bar */}
+
           <div className="bg-white p-4 rounded-2xl flex flex-wrap gap-4 items-end shadow-sm">
             <FilterSelect label="CATEGORY" options={["All Sports"]} />
             <FilterSelect label="ACTIVITY TYPE" options={["Activity Type"]} />
@@ -24,7 +24,6 @@ const ProgramsListSection = () => {
             </button>
           </div>
 
-          {/* Siyahı */}
           <div className="space-y-4">
             {[1, 2, 3, 4, 5].map((i) => (
               <ActivityListItem
@@ -40,15 +39,13 @@ const ProgramsListSection = () => {
             ))}
           </div>
 
-          <button className="bg-[#2557FF] text-white px-8 py-3 rounded-xl font-bold text-sm flex items-center gap-2">
+          <button className="bg-[#1C50FB] text-white px-8 py-3 rounded-xl font-bold text-[14px] flex items-center gap-2">
             Explore All <ChevronRight size={18} />
           </button>
         </div>
 
-        {/* SAĞ TƏRƏF (Panellər) - 4 Sütun */}
+        {/* SAĞ TƏRƏF============================================= */}
         <div className="lg:col-span-4 space-y-6">
-          
-          {/* Fast Pass Card */}
           <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-50">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-blue-50 flex items-center justify-center rounded-xl">

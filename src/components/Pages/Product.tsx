@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import { Quicksand } from 'next/font/google';
 import ProductCard from '../Cards/ProductCard';

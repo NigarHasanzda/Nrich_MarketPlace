@@ -1,3 +1,4 @@
+"use client"
 import ProgramsListSection from '@/components/Pages/Activities/ProgramList'
 import Featured from '@/components/Pages/Features'
 import ProgramHeader from '@/components/Pages/Hero'
@@ -11,7 +12,7 @@ const Activities = () => {
            badgeText="2024 ACTIVITIES"
            title="Explore all programs"
            description="Explore our upcoming seasons designed to push boundaries and build champions. Professional coaching meets elite athletic development."
-           backgroundImage="/path-to-your-leaf-image.jpg" // Yarpaq şəkli və ya arxa fon şəklinin ünvanı
+           backgroundImage="/path-to-your-leaf-image.jpg"
          />
          <ProgramsListSection/>
          <Featured/>

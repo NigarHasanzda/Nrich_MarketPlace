@@ -2,10 +2,10 @@ import React from 'react';
 
 interface BenefitCardProps {
   label: string;
-  labelColor: string; // Tailwind class örneği: 'text-blue-600'
+  labelColor: string; 
   title: string;
   description: string;
-  borderColor: string; // Tailwind class örneği: 'border-blue-600'
+  borderColor: string; 
 }
 
 const BenefitCard: React.FC<BenefitCardProps> = ({
