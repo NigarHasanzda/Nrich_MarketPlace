@@ -3,6 +3,7 @@ import React from 'react';
 import { Quicksand } from 'next/font/google';
 import { Zap, MapPin, ChevronRight, Phone, Mail, Globe, MessageSquare } from 'lucide-react';
 import ActivityListItem from '@/components/Cards/ActivityListItem';
+import ProductSidebar from '@/components/ProductSideBAr/ProductSidebar';
 
 
 const quicksand = Quicksand({ subsets: ['latin'], weight: ['400', '600', '700'] });
@@ -45,51 +46,7 @@ const ProgramsListSection = () => {
         </div>
 
         {/* SAĞ TƏRƏF============================================= */}
-        <div className="lg:col-span-4 space-y-6">
-          <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-50">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-blue-50 flex items-center justify-center rounded-xl">
-                <Zap size={22} className="text-[#2557FF]" />
-              </div>
-              <h3 className="text-xl font-bold text-[#1A1D1F]">Fast Pass Entry</h3>
-            </div>
-            <p className="text-gray-400 text-sm mb-8 leading-relaxed">
-              Skip the line and secure your athlete's spot instantly. Our streamlined portal handles all waivers and medical docs in seconds.
-            </p>
-            <button className="w-full bg-[#2557FF] text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition-all">
-              Register Now
-            </button>
-          </div>
-
-          {/* Find Location Card */}
-          <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-50">
-            <div className="flex items-center gap-3 mb-6">
-              <MapPin size={22} className="text-[#2557FF]" />
-              <h3 className="text-xl font-bold text-[#1A1D1F]">Find Location</h3>
-            </div>
-            <div className="space-y-6">
-              <LocationLink name="North HQ Complex" address="1200 Athlete Dr, Chicago" />
-              <LocationLink name="West Suburban Hub" address="450 Pine St, Naperville" />
-              <LocationLink name="City East Aquatics" address="88 Lakeview Pkwy, Chicago" />
-            </div>
-          </div>
-
-          {/* Contact Card */}
-          <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-50">
-            <h3 className="text-xl font-bold text-[#1A1D1F] mb-6">Contact Us</h3>
-            <button className="w-full bg-[#2557FF] text-white font-bold py-4 rounded-xl mb-4">REGISTER NOW</button>
-            <button className="w-full bg-white border-2 border-gray-100 text-[#2557FF] font-bold py-4 rounded-xl flex items-center justify-center gap-2 mb-8">
-              <MessageSquare size={20} /> Message NRICH
-            </button>
-            
-            <div className="space-y-6">
-              <ContactRow icon={<Phone size={18}/>} label="SUPPORT LINE" val="888.555.NRICH" />
-              <ContactRow icon={<Mail size={18}/>} label="EMAIL US" val="hello@nrichsports.com" />
-              <ContactRow icon={<Globe size={18}/>} label="WEBSITE" val="www.nrichsports.com" />
-            </div>
-          </div>
-
-        </div>
+        <ProductSidebar/>
       </div>
     </section>
   );
