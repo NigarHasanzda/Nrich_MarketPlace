@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { Quicksand } from 'next/font/google';
-import { Star, CircleUserRound, Trophy } from 'lucide-react'; // Trophy ikonunu əlavə etdik
+import { Star, CircleUserRound, Trophy } from 'lucide-react';
 import { CircleCheck } from 'lucide-react';
 import { Play } from 'lucide-react';
 import { StoreButton } from '../Button/StoreButton';

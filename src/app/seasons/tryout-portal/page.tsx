@@ -1,8 +1,11 @@
 import React from 'react'
+import TryoutPortal from './TryoutPortal'
 
 const page = () => {
   return (
-    <div>page</div>
+   <>
+   <TryoutPortal/>
+   </>
   )
 }
 
