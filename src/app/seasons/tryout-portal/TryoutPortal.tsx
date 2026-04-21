@@ -114,7 +114,7 @@ const TryoutPage = () => {
 
 
                 <div className="lg:col-span-1">
-                    <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 sticky top-8">
+                    <div className="bg-white p-8 rounded-[8px] shadow-sm border border-gray-100 sticky top-8">
                         <h3 className="text-[20px] font-bold mb-8">Contact Us</h3>
                         <div className="space-y-4 mb-10">
                             <button className="w-full bg-[#1E51FF] text-white py-4 rounded-[8px] font-bold text-[18px] hover:bg-blue-700 transition-all uppercase tracking-widest shadow-lg shadow-blue-100">
