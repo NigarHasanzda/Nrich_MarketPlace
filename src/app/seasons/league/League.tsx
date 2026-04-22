@@ -1,15 +1,15 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import { Quicksand } from 'next/font/google';
 import {
   UserPlus, Users, MapPin, UserCheck, Calendar,
-  ShieldCheck, Trophy, LayoutDashboard, BarChart3, MessageSquare
+  LayoutDashboard, BarChart3
 } from 'lucide-react';
 import { StandingRow } from '@/components/Cards/STandingRow';
 import { DetailItem } from '@/components/Cards/DetailItem';
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
-
 import VerifiedIcon from '@mui/icons-material/Verified';
-
 
 const quicksand = Quicksand({ subsets: ['latin'], weight: ['400', '500', '600', '700'] });
 
@@ -20,6 +20,13 @@ interface ResultItem {
 }
 
 const LeagueStandingsPage = () => {
+  // Hydration xətasını həll etmək üçün state
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const standings = [
     { rank: "01", teamName: "The Strikers", logo: "/logo.jpg", p: 12, w: 9, d: 2, l: 1, gd: "+18", pts: 29, isTop: true },
     { rank: "02", teamName: "Apex Elite", logo: "/logo.jpg", p: 12, w: 8, d: 3, l: 1, gd: "+14", pts: 27 },
@@ -32,6 +39,7 @@ const LeagueStandingsPage = () => {
     { icon: UserCheck, title: "Commissioner", value: "Coach Marcus Thorne", subValue: "Head of Player Development" },
     { icon: Calendar, title: "Season Date", value: "March 15 - June 22, 2024", subValue: "Playoffs begin June 10" },
   ];
+
   const recentResultsData: ResultItem[] = [
     {
       date: "May 14, 2024",
@@ -54,6 +62,7 @@ const LeagueStandingsPage = () => {
     <div className={`${quicksand.className} min-h-screen bg-[#F8FAFC] p-4 md:p-10 text-[#1A202C]`}>
       <div className="max-w-[1550px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
 
+        {/* Main Content */}
         <div className="lg:col-span-8 space-y-10">
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -65,6 +74,7 @@ const LeagueStandingsPage = () => {
             <h2 className="text-[48px] leading-tight font-extrabold text-[#1E51FF] tracking-tight">Spring Soccer Classic</h2>
           </div>
 
+          {/* Standings Table */}
           <div className="bg-white rounded-[8px] shadow-sm border border-gray-100 overflow-hidden">
             <div className="grid grid-cols-[50px_1fr_40px_40px_40px_40px_50px_60px] bg-gray-50/50 py-6 px-6 text-[13px] font-bold text-[#434656] uppercase tracking-widest border-b border-gray-100">
               <div>Rank</div>
@@ -82,6 +92,8 @@ const LeagueStandingsPage = () => {
               ))}
             </div>
           </div>
+
+          {/* Recent Results Section */}
           <section>
             <h3 className="text-[30px] font-bold mb-6 uppercase tracking-tight">Recent Results</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -93,7 +105,7 @@ const LeagueStandingsPage = () => {
                       <span className="text-[#1A202C]">{result.homeTeam.name}</span>
                       <span className="text-[#1A202C] text-[18px]">{result.homeTeam.score}</span>
                     </div>
-                    <div className="flex justify-between font-regular text-[14px">
+                    <div className="flex justify-between font-normal text-[14px]">
                       <span className="text-[#94A3B8]">{result.awayTeam.name}</span>
                       <span className="text-[#94A3B8] text-[18px]">{result.awayTeam.score}</span>
                     </div>
@@ -110,10 +122,10 @@ const LeagueStandingsPage = () => {
             <h3 className="text-[22px] font-bold mb-6">Join the League</h3>
             <div className="space-y-3 mb-6">
               <button className="w-full bg-[#1E51FF] text-white py-4 rounded-xl font-bold text-[18px] flex items-center justify-center gap-2 uppercase tracking-widest hover:bg-blue-700 transition-colors">
-                <UserPlus className="w-4 h-4" /> Register as Individual
+                <UserPlus size={18} /> Register as Individual
               </button>
               <button className="w-full border border-gray-100 py-4 rounded-xl font-bold text-[18px] flex items-center justify-center gap-2 text-[#1E51FF] uppercase tracking-widest hover:bg-gray-50 transition-colors">
-                <Users className="w-4 h-4" /> Register as Individual
+                <Users size={18} /> Register as Individual
               </button>
             </div>
             <p className="text-[12px] text-center text-[#5E6061] font-medium leading-relaxed">
@@ -132,11 +144,11 @@ const LeagueStandingsPage = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-[#0035D01A] p-6 rounded-2xl flex flex-col items-center gap-3 text-center">
-             <VerifiedIcon  sx={{ fontSize: 29, color: '#0035D0' }}/>
+              {mounted && <VerifiedIcon sx={{ fontSize: 29, color: '#0035D0' }} />}
               <span className="text-[10px] font-black text-[#0035D0] uppercase tracking-widest">Verified League</span>
             </div>
             <div className="bg-[#0035D01A] p-6 rounded-2xl flex flex-col items-center gap-3 text-center">
-              <SportsSoccerIcon   sx={{ fontSize: 29, color: '#0035D0' }} />
+              {mounted && <SportsSoccerIcon sx={{ fontSize: 29, color: '#0035D0' }} />}
               <span className="text-[10px] font-black text-[#0035D0] uppercase tracking-widest">Pro Officiating</span>
             </div>
           </div>
@@ -158,11 +170,11 @@ const LeagueStandingsPage = () => {
                 { icon: BarChart3, label: "Stats" },
               ].map((item, idx) => (
                 <button key={idx} className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-[16px] font-semibold text-[#64748B] hover:bg-gray-50 transition-colors">
-                  <item.icon className="w-5 h-5  color-[#64748B]" /> {item.label}
+                  <item.icon className="w-5 h-5" /> {item.label}
                 </button>
               ))}
             </div>
-            <button className="w-full bg-[#1E51FF] text-white py-4 rounded-xl font-bold text-[18px] uppercase tracking-widest mt-6 shadow-lg shadow-blue-100">
+            <button className="w-full bg-[#1E51FF] text-white py-4 rounded-xl font-bold text-[18px] uppercase tracking-widest mt-6 shadow-lg shadow-blue-100 hover:bg-blue-700 transition-all">
               Register Team
             </button>
           </div>
