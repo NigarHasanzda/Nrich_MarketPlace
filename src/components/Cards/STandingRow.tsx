@@ -21,8 +21,8 @@ export const StandingRow: React.FC<StandingRowProps> = ({
 }) => (
   <div className={`${quicksand.className} grid grid-cols-[50px_1fr_40px_40px_40px_40px_50px_60px] items-center py-4 border-b border-gray-50  font-bold text-[#64748B]`}>
     <div className="pl-4 text-[18px] text-[#191C1D4D]">{rank}</div>
-    <div className="flex items-center gap-3 text-[16px] text-[#1A202C]">
-      <div className="w-8 h-8 rounded-md bg-gray-100 ml-10 overflow-hidden">
+    <div className="flex items-center gap-2 sm:gap-3 text-[14px] sm:text-[16px] text-[#1A202C] min-w-0 truncate">
+      <div className="w-8 h-8 rounded-md bg-gray-100 ml-2 sm:ml-6 lg:ml-10 overflow-hidden shrink-0">
         <img src={logo} alt={teamName} className="w-full h-full object-cover" />
       </div>
       {teamName}

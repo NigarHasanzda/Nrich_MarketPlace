@@ -18,14 +18,14 @@ interface ProgramHeaderProps {
 const ProgramHeader = ({ badgeText, title, description, backgroundImage }: ProgramHeaderProps) => {
   return (
     <section className={`${quicksand.className} relative w-full overflow-hidden bg-[#1A1B2F]`}>
-      <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row items-stretch min-h-[320px] md:h-[390px]">
+      <div className="max-w-[1600px] mx-auto flex flex-col md:flex-row items-stretch min-h-[280px] sm:min-h-[320px] md:h-[390px]">
         
-        <div className="flex-1 flex flex-col justify-center px-8 py-12 md:px-16 lg:px-24 z-10">
+        <div className="flex-1 flex flex-col justify-center px-4 sm:px-8 py-10 sm:py-12 md:px-16 lg:px-24 z-10">
           <span className="text-gray-400 text-[12px] md:text-[16px] font-bold ">
             {badgeText}
           </span>
           
-          <h1 className="text-white text-4xl md:text-5xl lg:text-[66px] font-bold mb-6 leading-tight">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[66px] font-bold mb-4 sm:mb-6 leading-tight">
             {title}
           </h1>
           

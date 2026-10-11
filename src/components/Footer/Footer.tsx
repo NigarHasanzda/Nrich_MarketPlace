@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <div className={`${quicksand.className} flex flex-col`}>
       {/* App Section */}
-      <section className="bg-[#0D1B3E] py-20 px-6 relative overflow-hidden">
+      <section className="bg-[#0D1B3E] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative overflow-hidden">
         <div className="max-w-5xl mx-auto text-center">
           
           {/* Badge */}
@@ -25,7 +25,7 @@ const Footer = () => {
             <span>Available on iOS & Android</span>
           </div>
 
-          <h2 className="text-white text-4xl md:text-[34px] font-bold mb-6">
+          <h2 className="text-white text-2xl sm:text-3xl md:text-[34px] font-bold mb-6">
             Get the NRICH App
           </h2>
           
@@ -34,7 +34,7 @@ const Footer = () => {
           </p>
 
           {/* App Cards Container */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
             
             {/* Parent App Card */}
             <AppCard 
@@ -100,7 +100,7 @@ const AppCard = ({ icon, iconBg, title, subtitle, rating }: any) => (
       </div>
     </div>
 
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 min-[400px]:grid-cols-2 gap-3 sm:gap-4">
       <StoreButton type="google" />
       <StoreButton type="apple" />
     </div>

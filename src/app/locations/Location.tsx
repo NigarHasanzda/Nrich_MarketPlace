@@ -8,6 +8,8 @@ import FeaturedCard from '@/components/Cards/FeaturedCard';
 import BenefitCard from '@/components/Cards/BenefitCard';
 import ProductSidebar from '@/components/ProductSideBAr/ProductSidebar';
 import { ScheduleRow } from '@/components/Cards/ScheduleRow';
+import HorizontalScroll from '@/components/layout/HorizontalScroll';
+import { pagePadding } from '@/lib/layout';
 
 
 const quicksand = Quicksand({
@@ -18,7 +20,7 @@ const quicksand = Quicksand({
 
 const FacilityDetailSection = () => {
     return (
-        <main className={`${quicksand.className} bg-[#F8F9FA] py-12 px-6`}>
+        <main className={`${quicksand.className} bg-[#F8F9FA] py-10 sm:py-12 ${pagePadding}`}>
             <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
 
                 {/* SOL TƏRƏF (8 Sütun) */}
@@ -76,8 +78,9 @@ const FacilityDetailSection = () => {
                             <h2 className="text-[24px] font-bold text-[#1A1D1F]">Programs at NORTH HQ</h2>
                             <button className="text-[#2557FF] font-bold text-[14px] underline uppercase">See All</button>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <FeaturedCard
+                        <HorizontalScroll ariaLabel="Programs at North HQ">
+                            <div className="shrink-0 w-[min(100%,340px)] sm:w-[400px] lg:w-[490px] snap-start">
+                              <FeaturedCard
                                 image="/soccer-bg.jpg"
                                 title="Future Stars Soccer"
                                 address="123, Addresse California"
@@ -85,8 +88,10 @@ const FacilityDetailSection = () => {
                                 classPrice="10,00"
                                 date="30 Dec, 2025"
                                 time="10:00 - 11:00"
-                            />
-                            <FeaturedCard
+                              />
+                            </div>
+                            <div className="shrink-0 w-[min(100%,340px)] sm:w-[400px] lg:w-[490px] snap-start">
+                              <FeaturedCard
                                 image="/soccer-bg.jpg"
                                 title="Future Stars Soccer"
                                 address="123, Addresse California"
@@ -94,36 +99,43 @@ const FacilityDetailSection = () => {
                                 classPrice="10,00"
                                 date="30 Dec, 2025"
                                 time="10:00 - 11:00"
-                            />
-                        </div>
+                              />
+                            </div>
+                        </HorizontalScroll>
                     </div>
 
                     {/* 3. MEMBER BENEFITS (Sizin BenefitCard-dan istifadə olunur) */}
                     <div>
                         <h2 className="text-[24px] font-bold text-[#1A1D1F] mb-6">MEMBER BENEFITS & DISCOUNTS</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <BenefitCard
+                        <HorizontalScroll ariaLabel="Member benefits">
+                            <div className="shrink-0 w-[min(100%,280px)] sm:w-[300px] snap-start">
+                              <BenefitCard
                                 label="Limited Time"
                                 labelColor="text-[#2557FF]"
                                 title="Early Bird 15%"
                                 description="Register by May 15th to unlock special pricing."
                                 borderColor="bg-[#2557FF]"
-                            />
-                            <BenefitCard
+                              />
+                            </div>
+                            <div className="shrink-0 w-[min(100%,280px)] sm:w-[300px] snap-start">
+                              <BenefitCard
                                 label="Family Plan"
                                 labelColor="text-red-500"
                                 title="Sibling Discount"
                                 description="$25 off for each additional child enrolled."
                                 borderColor="bg-red-500"
-                            />
-                            <BenefitCard
+                              />
+                            </div>
+                            <div className="shrink-0 w-[min(100%,280px)] sm:w-[300px] snap-start">
+                              <BenefitCard
                                 label="Value Pack"
                                 labelColor="text-gray-400"
                                 title="Season Pass"
                                 description="Access all sports for a flat $249/year fee."
                                 borderColor="bg-gray-300"
-                            />
-                        </div>
+                              />
+                            </div>
+                        </HorizontalScroll>
                     </div>
 
                     {/* 4. FULL ACTIVITIES SCHEDULE */}

@@ -6,6 +6,8 @@ import { Zap, MapPin, ChevronRight, Phone, Mail, Globe, MessageSquare } from 'lu
 import ProgramHeader from '@/components/Pages/Hero';
 import ProductCard from '@/components/Cards/ProductCard';
 import ProductSidebar from '@/components/ProductSideBAr/ProductSidebar';
+import HorizontalScroll from '@/components/layout/HorizontalScroll';
+import { pagePadding } from '@/lib/layout';
 
 const quicksand = Quicksand({
     subsets: ['latin'],
@@ -38,7 +40,7 @@ const ProductSection = () => {
                 description="Explore our upcoming seasons designed to push boundaries and build champions. Professional coaching meets elite athletic development."
                 backgroundImage="/path-to-your-leaf-image.jpg"
             />
-            <section className={`${quicksand.className} bg-gray-50 py-12 px-6`}>
+            <section className={`${quicksand.className} bg-gray-50 py-10 sm:py-12 ${pagePadding}`}>
                 <div className="max-w-[1550px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
 
                     {/* SOL TƏRƏF: Məhsul Kateqoriyaları (8 Sütun) */}
@@ -46,19 +48,20 @@ const ProductSection = () => {
                         {categories.map((cat) => (
                             <div key={cat.id}>
                                 {/* Kateqoriya Başlığı */}
-                                <div className="flex justify-between items-center mb-6">
-                                    <h2 className="text-[30px] font-bold text-[#1A1D1F]">{cat.name}</h2>
-                                    <button className="text-[#2557FF] font-bold text-[20px] underline uppercase tracking-wider">
+                                <div className="flex flex-wrap justify-between items-center gap-2 mb-6">
+                                    <h2 className="text-xl sm:text-2xl lg:text-[30px] font-bold text-[#1A1D1F]">{cat.name}</h2>
+                                    <button type="button" className="text-[#2557FF] font-bold text-sm sm:text-lg underline uppercase tracking-wider">
                                         See All
                                     </button>
                                 </div>
 
-                                {/* Məhsul Gridi (3 sütunlu) */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                                <HorizontalScroll ariaLabel={`${cat.name} products`}>
                                     {[1, 2, 3].map((i) => (
-                                        <ProductCard key={i} {...productData} />
+                                        <div key={i} className="shrink-0 w-[min(100%,280px)] sm:w-[300px] lg:w-[360px] snap-start">
+                                          <ProductCard {...productData} />
+                                        </div>
                                     ))}
-                                </div>
+                                </HorizontalScroll>
                             </div>
                         ))}
                     </div>

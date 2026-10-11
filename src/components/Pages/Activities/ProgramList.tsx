@@ -4,13 +4,14 @@ import { Quicksand } from 'next/font/google';
 import { Zap, MapPin, ChevronRight, Phone, Mail, Globe, MessageSquare } from 'lucide-react';
 import ActivityListItem from '@/components/Cards/ActivityListItem';
 import ProductSidebar from '@/components/ProductSideBAr/ProductSidebar';
+import { pagePadding } from '@/lib/layout';
 
 
 const quicksand = Quicksand({ subsets: ['latin'], weight: ['400', '600', '700'] });
 
 const ProgramsListSection = () => {
   return (
-    <section className={`${quicksand.className} bg-gray-50 py-22 px-6`}>
+    <section className={`${quicksand.className} bg-gray-50 py-10 sm:py-12 ${pagePadding}`}>
       <div className="max-w-[1550px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
         
         <div className="lg:col-span-8 space-y-6">

@@ -70,13 +70,17 @@ const LeagueStandingsPage = () => {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#009855] animate-pulse" /> Live Updates
               </span>
             </div>
-            <h1 className="text-[48px] font-extrabold tracking-tight">League Standings:</h1>
-            <h2 className="text-[48px] leading-tight font-extrabold text-[#1E51FF] tracking-tight">Spring Soccer Classic</h2>
+            <h1 className="text-2xl sm:text-4xl lg:text-[48px] font-extrabold tracking-tight">League Standings:</h1>
+            <h2 className="text-2xl sm:text-4xl lg:text-[48px] leading-tight font-extrabold text-[#1E51FF] tracking-tight">
+              Spring Soccer Classic
+            </h2>
           </div>
 
           {/* Standings Table */}
           <div className="bg-white rounded-[8px] shadow-sm border border-gray-100 overflow-hidden">
-            <div className="grid grid-cols-[50px_1fr_40px_40px_40px_40px_50px_60px] bg-gray-50/50 py-6 px-6 text-[13px] font-bold text-[#434656] uppercase tracking-widest border-b border-gray-100">
+            <div className="overflow-x-auto scrollbar-thin">
+            <div className="min-w-[640px]">
+            <div className="grid grid-cols-[50px_1fr_40px_40px_40px_40px_50px_60px] bg-gray-50/50 py-4 sm:py-6 px-4 sm:px-6 text-[11px] sm:text-[13px] font-bold text-[#434656] uppercase tracking-widest border-b border-gray-100">
               <div>Rank</div>
               <div className="ml-10">Team Name</div>
               <div className="text-center">P</div>
@@ -86,16 +90,18 @@ const LeagueStandingsPage = () => {
               <div className="text-center">GD</div>
               <div className="text-center text-[#0035D0]">PTS</div>
             </div>
-            <div className="px-4">
+            <div className="px-2 sm:px-4">
               {standings.map((team, idx) => (
                 <StandingRow key={idx} {...team} />
               ))}
+            </div>
+            </div>
             </div>
           </div>
 
           {/* Recent Results Section */}
           <section>
-            <h3 className="text-[30px] font-bold mb-6 uppercase tracking-tight">Recent Results</h3>
+            <h3 className="text-xl sm:text-2xl lg:text-[30px] font-bold mb-6 uppercase tracking-tight">Recent Results</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {recentResultsData.map((result, idx) => (
                 <div key={idx} className="bg-white p-6 rounded-[8px] border border-gray-100 shadow-sm">
@@ -121,7 +127,7 @@ const LeagueStandingsPage = () => {
           <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
             <h3 className="text-[22px] font-bold mb-6">Join the League</h3>
             <div className="space-y-3 mb-6">
-              <button className="w-full bg-[#1E51FF] text-white py-4 rounded-xl font-bold text-[18px] flex items-center justify-center gap-2 uppercase tracking-widest hover:bg-blue-700 transition-colors">
+              <button type="button" className="w-full bg-[#1E51FF] text-white py-3.5 sm:py-4 rounded-xl font-bold text-[15px] sm:text-[18px] flex items-center justify-center gap-2 uppercase tracking-wide sm:tracking-widest hover:bg-blue-700 transition-colors">
                 <UserPlus size={18} /> Register as Individual
               </button>
               <button className="w-full border border-gray-100 py-4 rounded-xl font-bold text-[18px] flex items-center justify-center gap-2 text-[#1E51FF] uppercase tracking-widest hover:bg-gray-50 transition-colors">

@@ -21,7 +21,7 @@ const Media = () => {
                 description="Explore our upcoming seasons designed to push boundaries and build champions. Professional coaching meets elite athletic development."
                 backgroundImage="/path-to-your-leaf-image.jpg"
             />
-            <section className={`${quicksand.className} bg-[#F8F9FA] py-16 px-6`}>
+            <section className={`${quicksand.className} bg-[#F8F9FA] py-12 sm:py-16 px-4 sm:px-6 lg:px-8`}>
                 <div className="max-w-[1550px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
                     <div className="lg:col-span-8 space-y-12">
 
@@ -42,7 +42,7 @@ const Media = () => {
                             </div>
 
                             {/* Böyük Video Altda */}
-                            <div className="relative group cursor-pointer rounded-2xl overflow-hidden h-[400px]">
+                            <div className="relative group cursor-pointer rounded-2xl overflow-hidden h-[220px] sm:h-[320px] lg:h-[400px]">
                                 <img
                                     src="/baskettop.png"
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -54,7 +54,7 @@ const Media = () => {
                                         <Play fill="white" className="text-white ml-1" size={28} />
                                     </div>
                                 </div>
-                                <div className="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black/80 to-transparent">
+                                <div className="absolute bottom-0 left-0 p-4 sm:p-8 w-full bg-gradient-to-t from-black/80 to-transparent">
                                     <span className="bg-[#2557FF] text-white text-[10px] font-bold px-3 py-1 rounded mb-3 inline-block uppercase">
                                         BASKETBALL TRAINING
                                     </span>
@@ -76,7 +76,7 @@ const Media = () => {
 
                     {/* SAĞ TƏRƏF: Sidebar (4 Sütun) */}
                     <div className="lg:col-span-4">
-                        <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 sticky top-8">
+                        <div className="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100 lg:sticky lg:top-24">
                             <h3 className="text-xl font-bold text-[#1A1D1F] mb-6">Contact Us</h3>
 
                             <button className="w-full bg-[#2557FF] text-white font-bold py-4 rounded-xl mb-4 hover:bg-blue-700 transition-all shadow-lg shadow-blue-100 active:scale-95">
@@ -100,17 +100,17 @@ const Media = () => {
     );
 };
 
-const ResourceItem = ({ icon, title, format, size }: { icon: any, title: string, format: string, size: string }) => (
-    <div className="bg-white p-5 rounded-2xl flex items-center justify-between border border-gray-50 hover:border-gray-200 transition-all cursor-pointer group shadow-sm">
-        <div className="flex items-center gap-4 text-[#2557FF]">
-            <div className="p-2.5 bg-blue-50 rounded-lg group-hover:bg-[#2557FF] group-hover:text-white transition-colors">
+const ResourceItem = ({ icon, title, format, size }: { icon: React.ReactNode; title: string; format: string; size: string }) => (
+    <div className="bg-white p-4 sm:p-5 rounded-2xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border border-gray-50 hover:border-gray-200 transition-all cursor-pointer group shadow-sm">
+        <div className="flex items-center gap-3 sm:gap-4 text-[#2557FF] min-w-0">
+            <div className="p-2.5 bg-blue-50 rounded-lg group-hover:bg-[#2557FF] group-hover:text-white transition-colors shrink-0">
                 {icon}
             </div>
-            <span className="text-[#1A1D1F] font-bold text-[15px]">{title}</span>
+            <span className="text-[#1A1D1F] font-bold text-[14px] sm:text-[15px] truncate">{title}</span>
         </div>
-        <div className="flex items-center gap-4">
-            <span className="text-gray-400 text-[11px] font-bold uppercase tracking-wider">{format} • {size}</span>
-            <Download size={18} className="text-gray-400 group-hover:text-[#2557FF] transition-colors" />
+        <div className="flex items-center justify-between sm:justify-end gap-4 pl-12 sm:pl-0">
+            <span className="text-gray-400 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider">{format} • {size}</span>
+            <Download size={18} className="text-gray-400 group-hover:text-[#2557FF] transition-colors shrink-0" aria-hidden />
         </div>
     </div>
 );

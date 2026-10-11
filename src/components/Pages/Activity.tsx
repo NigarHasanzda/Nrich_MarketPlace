@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from 'react';
 import { Quicksand } from 'next/font/google';
 import { Calendar, Mail, Phone, Globe, MessageSquare } from 'lucide-react';
 import { pageContainer, pagePadding } from '@/lib/layout';
@@ -107,7 +108,7 @@ const ActivitySection = () => {
   );
 };
 
-const ContactItem = ({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) => (
+const ContactItem = ({ icon, label, value }: { icon: ReactNode; label: string; value: string }) => (
   <div className="flex items-start gap-4">
     <div className="w-11 h-11 bg-[#F1F4FF] rounded-xl flex items-center justify-center shrink-0">
       {icon}

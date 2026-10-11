@@ -9,6 +9,8 @@ import BenefitCard from '@/components/Cards/BenefitCard';
 import ProductSidebar from '@/components/ProductSideBAr/ProductSidebar';
 import ProgramHeader from '@/components/Pages/Hero';
 import { ProgramRowItem } from '@/components/Cards/ProgramRowItem';
+import HorizontalScroll from '@/components/layout/HorizontalScroll';
+import { pagePadding } from '@/lib/layout';
 
 const quicksand = Quicksand({
   subsets: ['latin'],
@@ -43,21 +45,23 @@ const ProgramPage = () => {
         backgroundImage="/leaf-bg.jpg" 
       />
 
-      <main className={`${quicksand.className} bg-[#F8F9FA] py-12 px-6`}>
+      <main className={`${quicksand.className} bg-[#F8F9FA] py-10 sm:py-12 ${pagePadding}`}>
         <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
 
           <div className="lg:col-span-8 space-y-12">
             
             <div>
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-[24px] font-bold text-[#1A1D1F]">Featured Seasons</h2>
-                <button className="text-[#2557FF] font-bold text-[14px] underline uppercase tracking-wider">See All</button>
+              <div className="flex flex-wrap justify-between items-center gap-2 mb-6">
+                <h2 className="text-lg sm:text-xl lg:text-[24px] font-bold text-[#1A1D1F]">Featured Seasons</h2>
+                <button type="button" className="text-[#2557FF] font-bold text-[14px] underline uppercase tracking-wider">See All</button>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <HorizontalScroll ariaLabel="Featured seasons">
                 {featuredSeasons.map((season) => (
-                  <FeaturedCard key={season.id} {...season} />
+                  <div key={season.id} className="shrink-0 w-[min(100%,340px)] sm:w-[400px] lg:w-[490px] snap-start">
+                    <FeaturedCard {...season} />
+                  </div>
                 ))}
-              </div>
+              </HorizontalScroll>
             </div>
             <div>
               <div className="flex justify-between items-center mb-6">
@@ -74,11 +78,13 @@ const ProgramPage = () => {
      
             <div>
               <h2 className="text-[24px] font-bold text-[#1A1D1F] mb-6 uppercase tracking-tight">Member Benefits & Discounts</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <HorizontalScroll ariaLabel="Member benefits">
                 {benefits.map((benefit) => (
-                  <BenefitCard key={benefit.id} {...benefit} />
+                  <div key={benefit.id} className="shrink-0 w-[min(100%,280px)] sm:w-[300px] snap-start">
+                    <BenefitCard {...benefit} />
+                  </div>
                 ))}
-              </div>
+              </HorizontalScroll>
             </div>
 
          

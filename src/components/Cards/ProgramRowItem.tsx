@@ -1,7 +1,8 @@
+import type { ReactNode } from 'react';
 import { ChevronRight } from 'lucide-react';
 
 type ProgramRowItemProps = {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   sessions: string;
   ages: string;

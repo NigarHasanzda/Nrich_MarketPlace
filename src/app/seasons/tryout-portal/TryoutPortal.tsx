@@ -66,16 +66,16 @@ const TryoutPage = () => {
         <div className="min-h-screen bg-[#F8FAFC] font-['Quicksand'] p-4 md:p-8">
             <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 space-y-12">
-                    <div className="relative grid grid-cols-2 gap-4">
-                        <div className="rounded-[8px] overflow-hidden shadow-sm bg-gray-200 h-[470px]">
+                    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="rounded-[8px] overflow-hidden shadow-sm bg-gray-200 h-[220px] sm:h-[320px] md:h-[470px]">
                             <img src="/footbal.png" alt="Soccer" className="w-full h-full object-cover" />
                         </div>
 
-                        <div className="grid grid-rows-[274px_180px] gap-4">
-                            <div className="rounded-[8px] overflow-hidden shadow-sm bg-gray-200 h-[274px]">
+                        <div className="grid grid-cols-2 md:grid-cols-1 md:grid-rows-[274px_180px] gap-4">
+                            <div className="rounded-[8px] overflow-hidden shadow-sm bg-gray-200 h-[160px] sm:h-[200px] md:h-[274px] col-span-2 md:col-span-1">
                                 <img src="/ball.png" alt="Basketball" className="w-full h-full object-cover" />
                             </div>
-                            <div className="grid grid-cols-2 gap-4 h-[180px]">
+                            <div className="grid grid-cols-2 gap-4 h-[120px] sm:h-[160px] md:h-[180px] col-span-2 md:col-span-1">
                                 <div className="rounded-[8px] overflow-hidden shadow-sm bg-gray-200">
                                     <img src="/railway.jpg" alt="Running" className="w-full h-full object-cover" />
                                 </div>
@@ -85,17 +85,17 @@ const TryoutPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-[8px] shadow-2xl flex flex-col items-center min-w-[380px] min-h-[210px] border border-gray-50 z-10">
+                        <div className="relative md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 bg-white p-6 sm:p-8 rounded-[8px] shadow-2xl flex flex-col items-center w-full max-w-[380px] mx-auto md:mx-0 min-h-[180px] sm:min-h-[210px] border border-gray-50 z-10 -mt-6 md:mt-0">
                             <div className="bg-[#EDF2F7] w-14 h-14 rounded-xl flex items-center justify-center mb-4 text-[#1E51FF] text-2xl font-black italic">N</div>
-                            <div className="flex items-center gap-2 mb-1">
-                                <h2 className="text-[30px] font-bold text-[#1A202C]">Tryout Registration</h2>
+                            <div className="flex flex-wrap items-center justify-center gap-2 mb-1 text-center">
+                                <h2 className="text-xl sm:text-[30px] font-bold text-[#1A202C]">Tryout Registration</h2>
                                 <BadgeCheck className="text-blue-500 fill-blue-500 text-white w-6 h-6" stroke="white" />
                             </div>
                             <p className="text-[#64748B] text-xs font-bold tracking-[0.2em] uppercase">Nrich Athletics Elite Squad</p>
                         </div>
                     </div>
                     <section>
-                        <h3 className="text-[30px] font-bold text-[#1A202C] mb-6">Tryout Schedule</h3>
+                        <h3 className="text-xl sm:text-2xl lg:text-[30px] font-bold text-[#1A202C] mb-6">Tryout Schedule</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                             {scheduleData.map((item, idx) => (
                                 <ScheduleCard key={idx} {...item} />
@@ -103,7 +103,7 @@ const TryoutPage = () => {
                         </div>
                     </section>
                     <section>
-                        <h3 className="text-[30px] font-bold text-[#1A202C] mb-6">Registration Tiers</h3>
+                        <h3 className="text-xl sm:text-2xl lg:text-[30px] font-bold text-[#1A202C] mb-6">Registration Tiers</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {pricingData.map((tier, idx) => (
                                 <PricingTier key={idx} {...tier} />
