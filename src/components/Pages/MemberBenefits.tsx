@@ -1,6 +1,7 @@
-"use client"
-import BenefitCard from "../Cards/BenefitCard";
-
+import BenefitCard from '../Cards/BenefitCard';
+import HorizontalScroll from '@/components/layout/HorizontalScroll';
+import SectionHeader from '@/components/layout/SectionHeader';
+import { pageContainer, pagePadding } from '@/lib/layout';
 
 export default function MemberBenefits() {
   const benefitsData = [
@@ -39,16 +40,19 @@ export default function MemberBenefits() {
   ];
 
   return (
-    <section className="pt-12 pb-25 px-6">
-      <div className="max-w-[1550px] mx-auto">
-        <h2 className="text-[30px] font-bold text-gray-800 mb-8 uppercase tracking-tight">
-          Member Benefits & Discounts
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className={`pt-10 sm:pt-12 pb-16 sm:pb-20 ${pagePadding}`}>
+      <div className={pageContainer}>
+        <SectionHeader title="Member Benefits & Discounts" />
+        <HorizontalScroll ariaLabel="Member benefits">
           {benefitsData.map((benefit) => (
-            <BenefitCard key={benefit.id} {...benefit} />
+            <div
+              key={benefit.id}
+              className="shrink-0 w-[min(100%,280px)] sm:w-[300px] lg:w-[340px] snap-start"
+            >
+              <BenefitCard {...benefit} />
+            </div>
           ))}
-        </div>
+        </HorizontalScroll>
       </div>
     </section>
   );
