@@ -67,11 +67,20 @@ export default function ProductSection() {
           </a>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((product) => (
-            <ProductCard key={product.id} {...product} />
-          ))}
+        <div className="-mx-4 md:-mx-8 px-4 md:px-8">
+          <div
+            className="flex gap-6 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory overscroll-x-contain"
+            aria-label="Featured products carousel"
+          >
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="shrink-0 w-[min(100%,280px)] sm:w-[300px] lg:w-[360px] snap-start"
+              >
+                <ProductCard {...product} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -55,10 +55,20 @@ export default function Featured() {
             SEE ALL
           </a>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-between">
-          {seasonsData.map((item) => (
-            <FeaturedCard key={item.id} {...item} />
-          ))}
+        <div className="-mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+          <div
+            className="flex gap-6 lg:gap-8 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory overscroll-x-contain"
+            aria-label="Featured seasons carousel"
+          >
+            {seasonsData.map((item) => (
+              <div
+                key={item.id}
+                className="shrink-0 w-[min(100%,340px)] sm:w-[400px] lg:w-[490px] snap-start"
+              >
+                <FeaturedCard {...item} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

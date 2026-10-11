@@ -29,7 +29,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({
   time,
 }) => {
   return (
-    <div className={`${quicksand.className} bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden w-full max-w-[490px] mx-auto lg:mx-0 transition-all hover:shadow-md`}>
+    <div className={`${quicksand.className} bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden w-full h-full transition-all hover:shadow-md`}>
       {/* Görsel Alanı */}
       <div className="relative h-52 w-full">
         <img src={image} alt={title} className="w-full h-full object-cover" />
