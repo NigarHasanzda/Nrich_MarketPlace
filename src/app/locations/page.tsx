@@ -1,12 +1,17 @@
-import React from 'react'
-import FacilityPage from './Location'
+import type { Metadata } from 'next';
+import FacilityPage from './Location';
+import { pageMetadata } from '@/lib/site';
 
-const page = () => {
-  return (
-   <>
-   <FacilityPage/>
-   </>
-  )
-}
+export const metadata: Metadata = pageMetadata({
+  title: 'Locations',
+  description: 'NRICH facility details, directions, programs at each location, and activity schedules.',
+  path: '/locations',
+});
 
-export default page
+const page = () => (
+  <>
+    <FacilityPage />
+  </>
+);
+
+export default page;

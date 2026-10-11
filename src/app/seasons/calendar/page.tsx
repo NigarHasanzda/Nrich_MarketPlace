@@ -1,12 +1,17 @@
-import React from 'react'
-import TrainingCalendarPage from './TrainingCalendarPage'
+import type { Metadata } from 'next';
+import TrainingCalendarPage from './TrainingCalendarPage';
+import { pageMetadata } from '@/lib/site';
 
-const page = () => {
-  return (
-    <>
-    <TrainingCalendarPage/>
-    </>
-  )
-}
+export const metadata: Metadata = pageMetadata({
+  title: 'Training Calendar',
+  description: 'View NRICH training calendar, filter sessions, and register for upcoming activities.',
+  path: '/seasons/calendar',
+});
 
-export default page
+const page = () => (
+  <>
+    <TrainingCalendarPage />
+  </>
+);
+
+export default page;

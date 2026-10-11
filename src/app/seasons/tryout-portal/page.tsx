@@ -1,12 +1,17 @@
-import React from 'react'
-import TryoutPortal from './TryoutPortal'
+import type { Metadata } from 'next';
+import TryoutPortal from './TryoutPortal';
+import { pageMetadata } from '@/lib/site';
 
-const page = () => {
-  return (
-   <>
-   <TryoutPortal/>
-   </>
-  )
-}
+export const metadata: Metadata = pageMetadata({
+  title: 'Tryout Portal',
+  description: 'Register for NRICH elite tryouts. View schedule, pricing tiers, and contact support.',
+  path: '/seasons/tryout-portal',
+});
 
-export default page
+const page = () => (
+  <>
+    <TryoutPortal />
+  </>
+);
+
+export default page;

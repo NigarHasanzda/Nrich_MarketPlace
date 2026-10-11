@@ -1,12 +1,17 @@
-import React from 'react'
-import Media from './Media'
+import type { Metadata } from 'next';
+import Media from './Media';
+import { pageMetadata } from '@/lib/site';
 
-const page = () => {
-  return (
-   <>
-   <Media/>
-   </>
-  )
-}
+export const metadata: Metadata = pageMetadata({
+  title: 'Media',
+  description: 'NRICH video showcase, press resources, and media contact information.',
+  path: '/media',
+});
 
-export default page
+const page = () => (
+  <>
+    <Media />
+  </>
+);
+
+export default page;

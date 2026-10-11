@@ -1,12 +1,17 @@
-import React from 'react'
-import MArchendise from './MArchendise'
+import type { Metadata } from 'next';
+import MArchendise from './MArchendise';
+import { pageMetadata } from '@/lib/site';
 
-const page = () => {
-  return (
+export const metadata: Metadata = pageMetadata({
+  title: 'Merchandise',
+  description: 'Shop NRICH official merchandise, apparel, equipment, and top sellers.',
+  path: '/merchandise',
+});
+
+const page = () => (
   <>
-  <MArchendise/>
+    <MArchendise />
   </>
-  )
-}
+);
 
-export default page
+export default page;

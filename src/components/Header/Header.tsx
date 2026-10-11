@@ -10,7 +10,13 @@ const Header = () => (
     <div className="max-w-[1600px] mx-auto px-6 h-20 flex items-center justify-between">
       <div className="flex items-center gap-3">
         <MobileMenu />
-        <h1 className="text-[#001B71] text-3xl font-extrabold">N&apos;RICH</h1>
+        <a
+          href="/"
+          className="text-[#001B71] text-3xl font-extrabold hover:opacity-90 transition-opacity"
+          aria-label="N'RICH home"
+        >
+          N&apos;RICH
+        </a>
       </div>
 
       <DesktopNav />
